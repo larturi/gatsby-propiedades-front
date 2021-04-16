@@ -5,6 +5,8 @@ import BackgroundImage from 'gatsby-background-image';
 
 import Layout from '../components/Layout';
 import useInicio from '../hooks/useInicio';
+import Encuentra from '../components/Encuentra';
+import ListadoPropiedades from '../components/ListadoPropiedades';
 
 const ImagenBackground = styled(BackgroundImage)`
     height: 600px;
@@ -16,8 +18,7 @@ const Index = () => {
 
     const { nombre, contenido, imagen } = inicio[0];
 
-    console.log(imagen.sharp.fluid);
-    return (
+     return (
         <Layout>
 
             <ImagenBackground
@@ -35,18 +36,16 @@ const Index = () => {
                     justify-content: center;
                     align-items: center;
                 `}>
-                    <h1 CSS={css`
-                        font-size: 2rem;
-                        margin: 0;
-                        max-width: 800px;
+                    <h1 css={css`
+                            font-size: 3rem;
+                            margin: 0;
+                            max-width: 800px;
 
-                        @media (min-width: 992px) {
-                            .titulo {
-                                font-size: 4rem;
+                            @media (min-width: 992px) {
+                                .titulo {
+                                    font-size: 4rem;
+                                }
                             }
-                        }
-
-
                     `}> Venta de casas y departamentos exclusivos </h1>
                 </div>
             </ImagenBackground>
@@ -63,7 +62,10 @@ const Index = () => {
                 </div>
             </main>
 
-            
+            <Encuentra />
+
+            <ListadoPropiedades />
+
         </Layout>
     )
 }

@@ -29,7 +29,7 @@ const useInicio = () => {
         nombre: inicio.nombre,
         contenido: inicio.contenido,
         imagen: inicio.imagen
-    }))
+    }));
 
 };
 
