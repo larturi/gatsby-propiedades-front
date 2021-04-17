@@ -8,11 +8,12 @@ const usePropiedades = () => {
                     nombre
                     descripcion
                     id
+                    slug
                     precio
                     estacionamiento
                     bathrooms
                     habitaciones
-                    categorias {
+                    categoria {
                         nombre
                     }
                     agentes {
@@ -42,8 +43,9 @@ const usePropiedades = () => {
         habitaciones: propiedad.habitaciones,
         agentes: propiedad.agentes,
         precio: propiedad.precio,
-        categoria: propiedad.categorias,
-        imagen: propiedad.imagen
+        categoria: propiedad.categoria,
+        imagen: propiedad.imagen,
+        slug: propiedad.slug
     }));
 
 };

@@ -39,7 +39,9 @@ const Contenido = styled.div`
 
 const PropiedadPreview = ({ propiedad }) => {
 
-    const { nombre, imagen, bathrooms, estacionamiento, habitaciones, precio } = propiedad;
+    const { nombre, imagen, slug, bathrooms, estacionamiento, habitaciones, precio } = propiedad;
+
+    console.log(propiedad);
 
     return (
         <Card>
@@ -59,9 +61,9 @@ const PropiedadPreview = ({ propiedad }) => {
                     estacionamiento={estacionamiento}
                     habitaciones={habitaciones}
                 />
-                {/* <Boton to={ urlSlug( nombre ) }>
+                <Boton to={ slug }>
                     Visitar Propiedad
-                </Boton> */}
+                </Boton>
 
             </Contenido>
         </Card>
