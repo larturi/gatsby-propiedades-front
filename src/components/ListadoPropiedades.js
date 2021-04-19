@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import BackgroundImage from 'gatsby-background-image';
 
 import usePropiedades from '../hooks/usePropiedades';
 import PropiedadPreview from './PropiedadPreview';
@@ -40,7 +39,7 @@ const ListadoPropiedades = () => {
         } else {
             setFiltradas(propiedades);
         }
-    }, [categoria]);
+    }, [categoria, propiedades]);
 
     return (
         <div>

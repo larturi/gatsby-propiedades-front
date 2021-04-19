@@ -42,7 +42,6 @@ const usePropiedades = () => {
         bathrooms: propiedad.bathrooms,
         habitaciones: propiedad.habitaciones,
         agentes: propiedad.agentes,
-        precio: propiedad.precio,
         categoria: propiedad.categoria,
         imagen: propiedad.imagen,
         slug: propiedad.slug
