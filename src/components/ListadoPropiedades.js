@@ -5,6 +5,7 @@ import BackgroundImage from 'gatsby-background-image';
 
 import usePropiedades from '../hooks/usePropiedades';
 import PropiedadPreview from './PropiedadPreview';
+import useFiltro from '../hooks/useFiltro';
 
 const Ul = styled.ul`
     max-width: 1200px;
@@ -26,11 +27,20 @@ const Ul = styled.ul`
 const ListadoPropiedades = () => {
 
     const resultado = usePropiedades();
-    const [ propiedades, setPropiedades ] = useState([]);
+    const [ propiedades ] = useState(resultado);
+    const [ filtradas, setFiltradas ] = useState([]);
+
+    // Filtro de propiedades
+    const { categoria, FiltroUI } = useFiltro();
 
     useEffect(() => {
-        setPropiedades(resultado);
-    }, []);
+        if (categoria) {
+            const filtro = propiedades.filter(propiedad => propiedad.categoria.nombre === categoria);
+            setFiltradas(filtro);
+        } else {
+            setFiltradas(propiedades);
+        }
+    }, [categoria]);
 
     return (
         <div>
@@ -40,9 +50,11 @@ const ListadoPropiedades = () => {
                 `}
             >Nuestras Propiedades</h2>
 
+            { FiltroUI() }
+
             <Ul>
                 {
-                    propiedades.map( propiedad => (
+                    filtradas.map( propiedad => (
                         <PropiedadPreview 
                             key={propiedad.id}
                             propiedad={propiedad}

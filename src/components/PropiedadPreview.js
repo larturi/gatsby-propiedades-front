@@ -41,8 +41,6 @@ const PropiedadPreview = ({ propiedad }) => {
 
     const { nombre, imagen, slug, bathrooms, estacionamiento, habitaciones, precio } = propiedad;
 
-    console.log(propiedad);
-
     return (
         <Card>
 
